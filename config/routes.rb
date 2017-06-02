@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  get 'home/ta_index'
+
+  get 'home/student_index'
+
+  devise_for :controllers
   get 'home/index'
 
   root 'home#index'
