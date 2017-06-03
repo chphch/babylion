@@ -16,7 +16,10 @@ class HomeController < ApplicationController
   end
   
   def student_index
-    
+        person=User.new
+        person.id=current_user.id
+        person.seat_number=params[:seat_number]
+        person.save
   end
   
   def treasure
