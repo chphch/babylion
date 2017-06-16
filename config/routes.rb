@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   
   # student controller
   get 'student/student_index'
+  get 'student/student_help'
   get 'student/save_seat_number'
+  get 'student/create_question'
+  get 'student/create_emergency'
   
   # ta controller
   get 'ta/ta_index'
