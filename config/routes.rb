@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   # ta controller
   get 'ta/ta_index'
+  get 'ta/student_help'
   
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

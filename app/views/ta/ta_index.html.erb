@@ -2,8 +2,27 @@
     <div class="row">
     
         <div class="col-md-6">
-           <p> dd</p> 
-        </div>
+            <div class="row">
+                <div class="col-md-1">
+                </div><!--col-md-1 -->
+                <div class="col-md-4">
+                    <div class="question_list">
+                        <% @questions.reverse_each do |q| %>
+                            <div>
+                                <span><p3>작성자:<%= q.user.name %></p3></span>
+                                <div>
+                                    <p1><%= q.text %></p1>
+                                </div>
+                            </div>
+                            <hr>
+                        <% end %>
+                    </div>            
+                </div><!--col-md-4 -->
+                <div class="col-md-1">
+                </div><!--col-md-1 -->
+            
+            </div><!--row-->
+        </div><!--col-md-6 -->
         <div class="col-md-1"></div>
         <div class="col-md-4">
             <p>Seat</p>
@@ -53,3 +72,30 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+
+        
+<script>
+$(document).ready(function() {
+  $('.new_question').click(function(e) {
+    const question_area = $('.question_area');
+    alert('hi');
+    e.preventDefault();
+    $.ajax({
+      method: "get",
+      url: "/student/create_question",
+      data: {
+        content: question_area.val()
+      },
+      dataType: "json",
+      success: function(data) {
+        var str;
+        console.log(data);
+        str = ["<div><span><p3>작성자:",data.user_name,"</p3></span><div><p1>",data.text,"</p1></div></div><hr>"].join(" ");
+        $('.question_list').append(str);
+		question_area.val("");
+        return;
+      }
+    });
+  });
+});
+</script>
