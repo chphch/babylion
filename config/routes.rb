@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :controllers
   get 'home/index'
 
-  root 'home#index'
+  root 'home#index' #https://babylion-chaosphantom.c9users.io/ => index action of home controller
   
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
