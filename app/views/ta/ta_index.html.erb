@@ -76,26 +76,29 @@
         
 <script>
 $(document).ready(function() {
-  $('.new_question').click(function(e) {
-    const question_area = $('.question_area');
-    alert('hi');
-    e.preventDefault();
-    $.ajax({
-      method: "get",
-      url: "/student/create_question",
-      data: {
-        content: question_area.val()
-      },
-      dataType: "json",
-      success: function(data) {
-        var str;
-        console.log(data);
-        str = ["<div><span><p3>작성자:",data.user_name,"</p3></span><div><p1>",data.text,"</p1></div></div><hr>"].join(" ");
-        $('.question_list').append(str);
-		question_area.val("");
-        return;
-      }
-    });
-  });
+    setInterval(getNewId, 1000);
+    var getNewId = function() {
+        $('.new_question').click(function(e) {
+        const question_area = $('.question_area');
+        alert('hi');
+        e.preventDefault();
+        $.ajax({
+          method: "get",
+          url: "/student/create_question",
+          data: {
+            content: question_area.val()
+          },
+          dataType: "json",
+          success: function(data) {
+            var str;
+            console.log(data);
+            str = ["<div><span><p3>작성자:",data.user_name,"</p3></span><div><p1>",data.text,"</p1></div></div><hr>"].join(" ");
+            $('.question_list').append(str);
+    		question_area.val("");
+            return;
+          }
+        });
+      });
+    }
 });
 </script>

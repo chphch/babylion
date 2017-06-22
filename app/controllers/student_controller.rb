@@ -1,6 +1,11 @@
 class StudentController < ApplicationController
-    
+  
     def student_index
+        person = User.find(current_user.id)
+        puts current_user.id
+        puts params[:seat_number]
+        person.seat_number = params[:seat_number]
+        person.save
     end
       
     def student_help
@@ -32,5 +37,4 @@ class StudentController < ApplicationController
         redirect_to '/student/student_index'
     end
 
-    
 end

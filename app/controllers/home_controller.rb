@@ -11,17 +11,6 @@ class HomeController < ApplicationController
     end
   end
   
-  def ta_index
-  end
-  
-  def student_index
-        person = User.find(current_user.id)
-        puts current_user.id
-        puts params[:seat_number]
-        person.seat_number = params[:seat_number]
-        person.save
-  end
-  
   def treasure
   end
 end
