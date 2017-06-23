@@ -1,3 +1,113 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.field{
+    background-color: #f5f5f5;
+    max-width: 350px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.field
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 12px;
+    border-radius: 7px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.field
+{
+    z-index: 5;
+}
+
+input[type="text"].a
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+input[type="password"].b
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.account-wall
+{
+    margin-top: 80px;
+    padding: 40px 0px 20px 0px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.login-title
+{
+    color: #555;
+    font-size: 22px;
+    font-weight: 400;
+    display: block;
+}
+
+.simba
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.select-img
+{
+	border-radius: 50%;
+    display: block;
+    height: 75px;
+    margin: 0 30px 10px;
+    width: 75px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.select-name
+{
+    display: block;
+    margin: 30px 10px 10px;
+}
+
+.logo-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.actions
+{
+    font-size: 50px;
+    font-weight: bold;
+    border-right-style: none;
+    height: auto;
+    padding: 20px;
+    max-width: 350px;
+
+}
+
+.simba
+{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px;
+    max-width: 350px;
+    padding: 15px;
+}
