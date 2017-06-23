@@ -1,11 +1,23 @@
-<div class="container">
+<p>
+ <img src="http://i.imgur.com/DiPvHF2.jpg" title="source: imgur.com" width="500px" height="110x" />
+</p>
+<iv class="container">
     <div class="row">
         <div class="col-md-2">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 left_box">
+        <form action="/student/create_question" method="GET">
+              <div class="field question_field" >
+                <textarea name="content" class="question_area"></textarea>
+              </div>
+              <button type = 'submit' class="new_question">
+                <i> </i> Add Question
+              </button>
+            </form>
+                
             <div class="question_list">
-                <% @questions.each do |q| %>
-                    <div>
+                <% @questions.reverse.each do |q| %>
+                    <div class="qustion_box">
                         <span><p3>작성자:<%= q.user.name %></p3></span>
                         <div>
                             <p1><%= q.text %></p1>
@@ -14,17 +26,9 @@
                     <hr>
                 <% end %>
             </div>
-            <form action="/student/create_question" method="GET">
-              <div class="field question_field" >
-                <textarea name="content" class="question_area"></textarea>
-              </div>
-              <button type = 'submit' class="new_question">
-                <i> </i> Add Question
-              </button>
-            </form>
-            
+                        
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 right_box">
             <form action = "/student/create_emergency" method = 'get'>
               <button type="submit" class="btn btn-default" aria-label="Left Align">
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
@@ -42,8 +46,9 @@
         <div class="col-md-2">
         </div>
     </div>
-    
+<img src="http://i.imgur.com/FE4MgP1.jpg" title="source: imgur.com" width="1000px" height="362px"/>
 </div>
+
 
 <script>
 $(document).ready(function() {
