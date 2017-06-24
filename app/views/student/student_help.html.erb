@@ -65,7 +65,7 @@ $(document).ready(function() {
       success: function(data) {
         var str;
         console.log(data);
-        str = ["<div><span><p3>작성자:",data.user_name,"</p3></span><div><p1>",data.text,"</p1></div></div><hr>"].join(" ");
+        str = ["<div class='qustion_box'><span><p3>작성자:",data.user_name,"</p3></span><div><p1>",data.text,"</p1></div></div><hr>"].join(" ");
         $('.question_list').prepend(str);
 		question_area.val("");
         return;

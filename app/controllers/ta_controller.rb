@@ -1,9 +1,9 @@
 class TaController < ApplicationController
     
   def ta_index
-    @last_id = Question.last.id
-    if (@last_id == nil)
-      @last_id = 0
+    @last_id = 0
+    if (Question.all.length != 0) 
+      @last_id = Question.last.id
     end
     @questions = Question.all
   end
