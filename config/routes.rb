@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :controllers
   
   # home controller
-  root 'home#index' #https://babylion-chaosphantom.c9users.io/ => index action of home controller
+  root 'home#index'
   get 'home/index'
   
   # student controller
@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   get 'student/save_seat_number'
   get 'student/create_question'
   get 'student/create_emergency'
-  
+  get 'ta/student_help'
+
   # ta controller
   get 'ta/ta_index'
-  get 'ta/student_help'
+  get 'ta/update_ta_index_questions'
   
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

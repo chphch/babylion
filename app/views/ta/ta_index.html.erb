@@ -73,32 +73,33 @@
     </div>
 </div>
 
-        
+
 <script>
 $(document).ready(function() {
-    setInterval(getNewId, 1000);
-    var getNewId = function() {
-        $('.new_question').click(function(e) {
-        const question_area = $('.question_area');
-        alert('hi');
-        e.preventDefault();
-        $.ajax({
-          method: "get",
-          url: "/student/create_question",
-          data: {
-            content: question_area.val()
-          },
-          dataType: "json",
-          success: function(data) {
-            var str;
-            console.log(data);
-            str = ["<div><span><p3>작성자:",data.user_name,"</p3></span><div><p1>",data.text,"</p1></div></div><hr>"].join(" ");
-            $('.question_list').append(str);
-    		question_area.val("");
-            return;
-          }
-        });
-      });
-    }
+  setInterval(updateMessages, 1000);
+  var last_id = <%= @last_id %>;
+
+  function updateMessages() {
+    $.ajax({
+      method: "get",
+      url: "/ta/update_ta_index_questions",
+      data: {
+        last_id: last_id
+      },
+      dataType: "json",
+      success: function(data) {
+        console.log(data);
+        if (data.length != 0)
+          last_id = data[data.length - 1].id;
+        var str;
+        for (var i = 0; i < data.length; i++) {
+          var datum = data[i];
+          console.log(datum.text);
+          $(".question_list").prepend("<div><span><p3>작성자:" + datum.user_id + "</p3></span><div><p1>" + datum.text  + "</p1></div></div><hr>");
+        }
+        return;
+      }
+    });
+  }
 });
 </script>

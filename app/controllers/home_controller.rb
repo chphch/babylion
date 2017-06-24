@@ -11,6 +11,4 @@ class HomeController < ApplicationController
     end
   end
   
-  def treasure
-  end
 end
