@@ -49,7 +49,6 @@
 $(document).ready(function() {
   $('.new_question').click(function(e) {
     const question_area = $('.question_area');
-    alert('hi');
     e.preventDefault();
     $.ajax({
       method: "get",
@@ -62,7 +61,7 @@ $(document).ready(function() {
         var str;
         console.log(data);
         str = ["<div><span><p3>작성자:",data.user_name,"</p3></span><div><p1>",data.text,"</p1></div></div><hr>"].join(" ");
-        $('.question_list').append(str);
+        $('.question_list').prepend(str);
 		question_area.val("");
         return;
       }
